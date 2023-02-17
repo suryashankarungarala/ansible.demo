@@ -1,0 +1,12 @@
+--- 
+ - hosts: all 
+   become: yes
+   tasks: 
+      - name: variables
+        yum: name='{{item}}' state=present
+        with_items: 
+          - java 
+          - tree 
+          - docker
+          - maven
+          - httpd

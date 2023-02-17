@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+    - name: surya
+      command: yum install git -y
+      when: ansible_os_family== "RedHat"
+    
+    - name: shankar
+      command: apt-get-y install git -y
+      when: ansible_os_family== "Debian"
+

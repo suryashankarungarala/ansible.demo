@@ -1,0 +1,21 @@
+--- 
+  - hosts: all
+    become: yes
+    tasks:
+      - name: installing docker 
+        command: yum install docker -y
+        tags: a
+
+
+      - name: installing java 
+        command: yum install java -y
+        tags: b
+
+
+      - name: installing tree 
+        action: yum name=tree state=present 
+        tags: c
+
+      - name: installing maven 
+        action: yum name=maven state=present
+        tags: d

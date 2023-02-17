@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: surya
+      command: yum install httpd -y
+      notify: restart httpd
+  handlers:
+    - name: restart httpd 
+      command: systemctl start httpd  
